@@ -10,9 +10,19 @@ export const routes: Routes = [
         loadComponent: () => import('./business/dashboard/dashboard.component'),
       },
       {
-        path: 'client',
+        path: 'clients',
         loadComponent: () =>
-          import('./business/client/client-list/client-list.component'),
+          import('./business/client/client-home/client-list.component'),
+      },
+      {
+        path: 'client/create',
+        loadComponent: () =>
+          import('./business/client/client-create/client-create.component'),
+      },
+      {
+        path: 'client/view/:idcliente',
+        loadComponent: () =>
+          import('./business/client/client-view/view.component'),
       },
       {
         path: '',

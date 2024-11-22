@@ -1,0 +1,60 @@
+<div class="max-w-lg mx-auto bg-white p-6">
+  <h2 class="text-lg font-bold mb-4">Ver Cliente</h2>
+  <form [formGroup]="clienteForm">
+    <!-- Nombre -->
+    <div class="mb-4">
+      <label for="nombreCliente" class="block text-sm font-medium"
+        >Nombre</label
+      >
+      <input
+        id="nombreCliente"
+        type="text"
+        formControlName="nombreCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100"
+        placeholder="Nombre del cliente"
+        readonly
+      />
+    </div>
+
+    <!-- Dirección -->
+    <div class="mb-4">
+      <label for="direccionCliente" class="block text-sm font-medium"
+        >Dirección</label
+      >
+      <input
+        id="direccionCliente"
+        type="text"
+        formControlName="direccionCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100"
+        placeholder="Dirección del cliente"
+        readonly
+      />
+    </div>
+
+    <!-- Teléfono -->
+    <div class="mb-4">
+      <label for="telefonoCliente" class="block text-sm font-medium"
+        >Teléfono</label
+      >
+      <input
+        id="telefonoCliente"
+        type="tel"
+        formControlName="telefonoCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2 bg-gray-100"
+        placeholder="Teléfono del cliente"
+        readonly
+      />
+    </div>
+
+    <!-- Botón Cancelar -->
+    <div class="flex justify-end">
+      <button
+        type="button"
+        (click)="cancelar()"
+        class="bg-gray-500 text-white px-4 py-2 rounded"
+      >
+        Volver
+      </button>
+    </div>
+  </form>
+</div>
