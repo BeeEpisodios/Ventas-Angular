@@ -1,1 +1,82 @@
-<p>client-update works!</p>
+<div class="max-w-lg mx-auto bg-white p-6">
+  <h2 class="text-lg font-bold mb-4">Editar Cliente</h2>
+  <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+    <!-- Nombre -->
+    <div class="mb-4">
+      <label for="nombreCliente" class="block text-sm font-medium"
+        >Nombre</label
+      >
+      <input
+        id="nombreCliente"
+        type="text"
+        formControlName="nombreCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        placeholder="Ingrese el nombre"
+      />
+      <div
+        *ngIf="
+          clienteForm.get('nombreCliente')?.invalid &&
+          clienteForm.get('nombreCliente')?.touched
+        "
+        class="text-red-500 text-sm"
+      >
+        El nombre es requerido.
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="mb-4">
+      <label for="direccionCliente" class="block text-sm font-medium"
+        >Dirección</label
+      >
+      <input
+        id="direccionCliente"
+        type="text"
+        formControlName="direccionCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        placeholder="Ingrese la dirección"
+      />
+    </div>
+
+    <!-- Teléfono -->
+    <div class="mb-4">
+      <label for="telefonoCliente" class="block text-sm font-medium"
+        >Teléfono</label
+      >
+      <input
+        id="telefonoCliente"
+        type="tel"
+        formControlName="telefonoCliente"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        placeholder="Ingrese el teléfono"
+      />
+      <div
+        *ngIf="
+          clienteForm.get('telefonoCliente')?.invalid &&
+          clienteForm.get('telefonoCliente')?.touched
+        "
+        class="text-red-500 text-sm"
+      >
+        El teléfono debe ser válido.
+      </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="flex justify-between">
+      <button
+        type="submit"
+        [disabled]="clienteForm.invalid"
+        class="bg-green-500 text-white px-4 py-2 rounded"
+      >
+        Actualizar
+      </button>
+      <button
+        type="button"
+        (click)="cancelar()"
+        class="bg-gray-500 text-white px-4 py-2 rounded"
+      >
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

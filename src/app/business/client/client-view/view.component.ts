@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ClientService } from '../../../shared/services/client.service';
-import { MatTableModule } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -38,7 +37,7 @@ export default class ViewComponent {
   }
 
   ngOnInit() {
-    let clientId = this.activatedRoute.snapshot.paramMap.get('idCliente');
+    let clientId = this.activatedRoute.snapshot.paramMap.get('id');
 
     const clientData = this.clientService
       .getClient(Number(clientId))

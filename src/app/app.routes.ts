@@ -15,14 +15,19 @@ export const routes: Routes = [
           import('./business/client/client-home/client-list.component'),
       },
       {
+        path: 'client/view/:id',
+        loadComponent: () =>
+          import('./business/client/client-view/view.component'),
+      },
+      {
         path: 'client/create',
         loadComponent: () =>
           import('./business/client/client-create/client-create.component'),
       },
       {
-        path: 'client/view/:idcliente',
+        path: 'client/update/:id',
         loadComponent: () =>
-          import('./business/client/client-view/view.component'),
+          import('./business/client/client-update/client-update.component'),
       },
       {
         path: '',

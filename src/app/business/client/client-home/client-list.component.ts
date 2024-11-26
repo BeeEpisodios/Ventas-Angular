@@ -35,10 +35,15 @@ export default class ClientListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.clientService.deleteClient(id).subscribe((data) => {
-      this.clientes = this.clientes.filter(
-        (cliente) => cliente.idCliente !== id
-      );
-    });
+    const confirmation = confirm(
+      '¿Estás seguro de que deseas eliminar este cliente?'
+    );
+    if (confirmation) {
+      this.clientService.deleteClient(id).subscribe(() => {
+        this.clientes = this.clientes.filter(
+          (cliente) => cliente.idCliente !== id
+        );
+      });
+    }
   }
 }
